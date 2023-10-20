@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Alata';
+    text-decoration: none;
+}
+
+:root {
+    --nav-color: #A6B1E1;
+    --bg-color: #F4EEFF ;
+    --scnd-bg-clor: #DCD6F7;
+    --hover- : #DCD6F7;
+    --text-color: #000000;
+    --font-text: 'Alata';
+}
+
+body {
+    font-family: 'Alata', sans-serif;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.header {
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: var(--nav-color);
+    display: flex;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+    margin-left: 20px;
+    
+}
+
+
+.navbar a {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-right: 4rem;
+    z-index: 100;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--hover-);
+}
+
+#result {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.home {
+    display: flex;
+    padding: 30px 100px;
+}
+
+.home .home-content {
+    margin-top: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+}
+
+.masjid {
+    margin-top: 3rem;
+    margin-bottom: 150px;
+}
+
+.masjid img {
+    width: 50vw;
+    border: none;
+    border-radius: 50px;
+}
+
+
+
+
+.container1 {
+    font-size: 15px;
+    display: inline-block;
+    width: 15rem;
+    margin: auto auto 30px auto;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px #6c6b6b;
+    background-color: #fff;
+    margin-top: 2rem;
+    
+}
+
+
+.container {
+    margin-top: 20px;
+}
+
+.card-header {
+    background-color: var(--scnd-bg-clor);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+}
+
+.table-primary th {
+    background-color: var(--scnd-bg-clor);
+}
+
+.card {
+    border: 1px solid var(--hover-);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    padding: 8px;
+}
+
+.table-primary td {
+    font-weight: bold;
+    color: #fff;
+    background-color: #424874;
+}
+
+tr:nth-child(even){
+    background: var(--scnd-bg-clor);
+}
+
+.jadwal-sholat{
+    margin-right: 55px;
+    margin-left: 55px;
+    margin-top: 30px;
+}
+#menu-icon {
+    font-size: 3.6rem;
+    color: #000000;
+    display: none;
+    text-decoration: none;
+}
+
+
+/* Responsive */
+
+@media (max-width:1200px) {
+    html {
+        font-size: 95%;
+    }
+}
+
+@media (max-width:911px) {
+   
+    html {
+        font-size: 80%;
+    }
+    
+    .header {
+        padding: 1.5rem;
+    }
+
+    .home {
+        font-size: 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content {
+        margin-left: 50px;
+    }
+
+    .masjid img {
+        width: 65vw;
+        border: none;
+        border-radius: 50px;
+    }
+
+    .container1 {
+        font-size: 16px;
+        width: 12rem;
+        padding: 15px;
+        margin-top: 2rem;
+    }
+
+    .jadwal-sholat {
+        font-size: 18px;
+    }
+        
+    }
+
+   
+    @media (max-width:768px) {
+        
+       #menu-icon {
+        display: block;
+        margin-right: 40px;
+       }
+
+       .header {
+        padding: 15px;
+    }
+
+       .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 90%;
+        padding: 1rem 3%;
+        background: var(--nav-color);
+        border-top: .1rem solid rgba(0,0,0,0.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+        display: none;
+       }
+
+       .navbar .active {
+        display: block;
+        }
+
+        .home {
+            margin-top: 20px;
+            flex-direction: column;
+        }
+
+        .home-content {
+            margin-top: 4;
+            font-size: 20px;
+        }
+
+        .container1 {
+            font-size: 15px;
+            width: 10rem;
+            padding: 15px;
+            margin-top: 2rem;
+        }
+
+        .navbar a {
+            display: block;
+            font-size: 18px;
+            margin-right: 2.5rem;
+            padding: 10px;
+        }
+
+        .navbar.active {
+            display: block;
+        }
+
+
+        .jadwal-sholat {
+            font-size: 13px;
+        }
+    }
+
+    @media (max-width:617px) {
+        .home-content h3 {
+            font-size: 40px;
+        }
+
+        .home-content h2 {
+            font-size: 45px;
+        }
+
+        .home-content p {
+            font-size: 30px;
+        }
+
+        .container1 {
+            font-size: 10px;
+            width: 9rem;
+            padding: 15px;
+            margin-top: 2rem;
+        }
+
+        #result {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        } 
+    }
+
+    @media (max-width:450px) {
+        .home {
+            padding: 10px 30px ;
+        }
+
+        .masjid {
+            margin-top: 0;
+        }
+
+        .home-content h3 {
+            font-size: 30px;
+        }
+
+        .home-content h2 {
+            font-size: 35px;
+        }
+
+        .home-content p {
+            font-size: 20px;
+        }
+
+        .jadwal-sholat {
+            font-size: 10px;
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+
+        .container1 {    
+                font-size: 9.5px;
+                width: 8.5rem;
+                padding: 15px;
+                margin-top: 2rem;
+        }
+
+        #result {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        } 
+        
+
+    }
+

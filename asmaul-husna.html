@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Muslim</title>
+    <link rel="stylesheet" href="style-surah.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <p class="logo">Good muslim <i class="bx bx-wink-smile"></i></p> 
+        <a href="#"><i class='bx bx-menu' id="menu-icon"></i></a>                                                                  
+    
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="jadwal-sholat.html">Jadwal sholat</a>
+            <a href="asmaul-husna.html">Asmaul husna</a>
+            <a href="list-surah.html">List surah</a>
+        </nav>
+    </header>
+    
+    
+    <h1>Asmaul husna</h1>
+    <div id="result"></div>
+
+
+    <style>
+        
+        
+    </style>
+
+    
+    <script>
+
+        window.onload = function() {
+            getData();
+        }
+
+        function getData() {
+            fetch('https://api.aladhan.com/v1/asmaAlHusna')
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('Yahahaha gabisa ambil data');
+                }
+                return response.json();
+            })
+            .then (function(data) {
+                displayData(data);
+                // console.log(data)
+            })
+            .catch(function(error) {
+                console.log("terjadi kesalahan bro", error);
+            })
+        }
+
+        function displayData(data) {
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "";
+
+            data.data.forEach(function (asma) {
+
+                var asmaDiv = document.createElement('div');
+                asmaDiv.classList.add('asma');
+                asmaDiv.className = 'container1';
+
+                var namaAsmaul = document.createElement('h2');
+                namaAsmaul.textContent = asma.name;
+                namaAsmaul.className = 'nama';
+
+
+                var latinAsmaul = document.createElement('h3');
+                latinAsmaul.textContent = asma.transliteration;
+                latinAsmaul.className = 'latin';
+
+                // var nomorAsmaul = document.createElement('p');
+                // nomorAsmaul.textContent = "Number: " + asma.number;
+                // nomorAsmaul.className= 'nomor';
+
+                var meaningAsmaul = document.createElement('p');
+                meaningAsmaul.textContent = "Meaning: " + asma.en.meaning;
+                meaningAsmaul.className= 'meaning';
+
+
+                asmaDiv.appendChild(namaAsmaul);
+                asmaDiv.appendChild(latinAsmaul);
+                // asmaDiv.appendChild(nomorAsmaul);
+                asmaDiv.appendChild(meaningAsmaul);
+
+                resultDiv.appendChild(asmaDiv)
+            })
+        }
+    </script>
+
+    <style>
+        body {
+            margin-top: 7rem;
+        }
+    </style>
+
+    <script src="api.js"></script>
+</body>
+</html>
